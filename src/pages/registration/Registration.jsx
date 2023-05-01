@@ -6,7 +6,7 @@ const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
 
 const Registration = () => {
 
-  const {createUserUsingGoogle, createUserUsingEmail, updateUserProfile}=useContext(AuthContext);
+  const {createUserUsingGoogle, createUserUsingEmail, updateUserProfile,createUserUsingGithub}=useContext(AuthContext);
   
   const handleRegistration =(event)=>{
     event.preventDefault();
@@ -42,10 +42,10 @@ const Registration = () => {
                 </form>
             </div>
             <div className='md:w-1/2 lg:w-1/3 mx-auto mt-6'>
-            <div className='flex items-center justify-center border border-[#ddd] py-3 px-2 rounded-full mb-3 relative cursor-pointer'>
-                        <p className='absolute top-1.5 left-2 text-4xl '><FaGithub></FaGithub></p>
-                        <p className='text-base font-medium text-black'>Continue with Github</p>
-                    </div>
+                <div onClick={createUserUsingGithub} className='flex items-center justify-center border border-[#ddd] py-3 px-2 rounded-full mb-3 relative cursor-pointer'>
+                      <p className='absolute top-1.5 left-2 text-4xl '><FaGithub></FaGithub></p>
+                      <p className='text-base font-medium text-black'>Continue with Github</p>
+                  </div>
                 <div onClick={createUserUsingGoogle} className='flex items-center justify-center border border-[#ddd] py-3 px-2 rounded-full mb-3 relative cursor-pointer'>
                     <p className='absolute top-1.5 left-2 text-4xl text-[#1877F2]'><img className='w-9' src={googleIcon} alt="" /></p>
                     <p className='text-base font-medium text-black'>Continue with Google</p>

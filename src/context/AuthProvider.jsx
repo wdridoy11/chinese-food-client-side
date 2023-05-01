@@ -19,10 +19,26 @@ const AuthProvider = ({children}) => {
             console.log(error.message)
         })
     }
+
+    // create user using github
+    const createUserUsingGithub=()=>{
+        const githubProvider = new GithubAuthProvider();
+        signInWithPopup(auth,githubProvider)
+        .then((result)=>{ 
+            const user = result.user;
+            console.log(user)
+        })
+        .catch((error)=>{
+            console.log(error.message)
+        })
+    }
+
+
     // create user using email and password
     const createUserUsingEmail=(email,password)=>{
         return createUserWithEmailAndPassword(auth,email,password)
     }
+
     // user updateProfile
     const updateUserProfile =(user,name)=>{
         updateProfile(user,{
@@ -40,12 +56,15 @@ const AuthProvider = ({children}) => {
     const signInUser=(email,password)=>{
         return signInWithEmailAndPassword(auth,email,password)
     }
+
+    // user information
     const userInfo ={
         user,
         signInUser,
         updateUserProfile,
         createUserUsingEmail,
         createUserUsingGoogle,
+        createUserUsingGithub
     }
 
 
