@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div>
+    <div className='py-3'>
         <div className='container mx-auto'>
-            <div>
-                <div></div>
+            <div className='flex justify-between'>
                 <div>
-                    <nav>
-                        <Link to={`/`}>Home</Link>
-                        <Link to={``}></Link>
-                        <Link to={`/login`}>create accunt</Link>
+                    {/* <img src="" alt="" /> */}
+                    <h1>H</h1>
+                </div>
+                <div>
+                    <nav className='flex flex-row  gap-5'>
+                        <Link className='text-base font-medium text-black' to={`/`}>Home</Link>
+                        <Link className='text-base font-medium text-black' to={`/login`}>create accunt</Link>
                     </nav>
                 </div>
             </div>

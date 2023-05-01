@@ -5,7 +5,7 @@ import { AuthContext } from '../../context/AuthProvider';
 const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
 
 const Registration = () => {
-
+  const {createUserUsingGoogle}=useContext(AuthContext)
   const handleRegistration =(event)=>{
     event.preventDefault();
     const form = event.target;
@@ -34,7 +34,7 @@ const Registration = () => {
                         <p className='absolute top-1.5 left-2 text-4xl '><FaGithub></FaGithub></p>
                         <p className='text-base font-medium text-black'>Continue with Github</p>
                     </div>
-                <div className='flex items-center justify-center border border-[#ddd] py-3 px-2 rounded-full mb-3 relative cursor-pointer'>
+                <div onClick={createUserUsingGoogle} className='flex items-center justify-center border border-[#ddd] py-3 px-2 rounded-full mb-3 relative cursor-pointer'>
                     <p className='absolute top-1.5 left-2 text-4xl text-[#1877F2]'><img className='w-9' src={googleIcon} alt="" /></p>
                     <p className='text-base font-medium text-black'>Continue with Google</p>
                 </div>
