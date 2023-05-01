@@ -6,7 +6,8 @@ const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
 
 const Registration = () => {
 
-  const {createUserUsingGoogle, createUserUsingEmail, updateUserProfile}=useContext(AuthContext)
+  const {createUserUsingGoogle, createUserUsingEmail, updateUserProfile}=useContext(AuthContext);
+  
   const handleRegistration =(event)=>{
     event.preventDefault();
     const form = event.target;

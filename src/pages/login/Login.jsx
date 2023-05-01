@@ -5,12 +5,22 @@ import { AuthContext } from '../../context/AuthProvider';
 const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
 
 const Login = () => {
-    const {createUserUsingGoogle}=useContext(AuthContext)
-    const handleLogin=(event)=>{
+
+    const {createUserUsingGoogle,signInUser}=useContext(AuthContext);
+
+    const handleLogin =(event)=>{
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+        signInUser(email,password)
+        .then((result)=>{
+            const user = result.user;
+            console.log(user)
+        })
+        .catch((error)=>{
+            console.log(error.message)
+        })
     }
 
   return (
