@@ -1,11 +1,12 @@
 import React, { createContext, useState } from 'react'
-import {getAuth,GoogleAuthProvider,GithubAuthProvider, signInWithPopup} from 'firebase/auth'
+import {getAuth,GoogleAuthProvider,GithubAuthProvider,updateProfile, signInWithPopup, createUserWithEmailAndPassword} from 'firebase/auth'
 import app from '../utils/firebase/firebase.config';
 export const AuthContext = createContext(null);
 const AuthProvider = ({children}) => {
 
     const {user,setUser}=useState(null);
     const auth = getAuth(app);
+
     // create user using google
     const createUserUsingGoogle=()=>{
         const googleProvider=new GoogleAuthProvider();
@@ -18,10 +19,27 @@ const AuthProvider = ({children}) => {
             console.log(error.message)
         })
     }
-
+    // create user using email and password
+    const createUserUsingEmail=(email,password)=>{
+        return createUserWithEmailAndPassword(auth,email,password)
+    }
+    // user updateProfile
+    const updateUserProfile =(user,name)=>{
+        updateProfile(user,{
+            displayName:name
+        })
+        .then((result)=>{
+            console.log(result)
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    }
     const userInfo ={
         user,
-        createUserUsingGoogle
+        updateUserProfile,
+        createUserUsingEmail,
+        createUserUsingGoogle,
     }
 
 

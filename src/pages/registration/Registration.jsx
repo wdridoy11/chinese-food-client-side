@@ -1,17 +1,28 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthProvider';
 const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
 
 const Registration = () => {
-  const {createUserUsingGoogle}=useContext(AuthContext)
+
+  const {createUserUsingGoogle, createUserUsingEmail, updateUserProfile}=useContext(AuthContext)
   const handleRegistration =(event)=>{
     event.preventDefault();
     const form = event.target;
     const name =  form.name.value;
     const email = form.email.value;
     const password = form.password.value;
+    createUserUsingEmail(email,password)
+    .then((result)=>{
+      const user = result.user;
+      updateUserProfile(user,name);
+      console.log(user)
+      form.reset();
+    })
+    .catch((error)=>{
+      console.log(error.message)
+    })
   }
 
   return (
@@ -19,7 +30,7 @@ const Registration = () => {
     <div className='container mx-auto'>
         <div>
             <div className='border border-[#ddd] p-12 md:w-1/2 mx-auto rounded-lg'>
-                <h3 className='text-2xl font-bold mb-5'>Create an account</h3>
+                <h3 className='text-2xl font-bold mb-10'>Registration Now</h3>
                 <form onSubmit={handleRegistration}>
                     <input className='w-full border-b border-[#ddd] mb-5 pb-2 text-base outline-none' type="text" name="name" id="name" placeholder='Enter your name' required/>
                     <input className='w-full border-b border-[#ddd] mb-5 pb-2 text-base outline-none' type="email" name="email" id="email" placeholder='Enter your email' required/>
