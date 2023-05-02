@@ -1,11 +1,12 @@
 import React from 'react'
 import Hero from '../hero/Hero'
-import Error from '../../error/Error'
+import ChefDataLoad from '../../chef/ChefDataLoad'
 
 const Home = () => {
   return (
     <div>
       <Hero></Hero>
+      <ChefDataLoad></ChefDataLoad>
     </div>
   )
 }

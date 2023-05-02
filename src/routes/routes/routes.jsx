@@ -5,6 +5,7 @@ import Home from '../../pages/home/home/Home';
 import Login from '../../pages/login/Login';
 import Registration from '../../pages/registration/Registration';
 import Error from '../../pages/error/Error';
+import ChefDataLoad from '../../pages/chef/ChefDataLoad';
 
 const router= createBrowserRouter([
     {
@@ -14,6 +15,11 @@ const router= createBrowserRouter([
             {
                 path:"/",
                 element:<Home></Home>
+            },
+            {
+                path:"chef",
+                element:<ChefDataLoad></ChefDataLoad>,
+                loader:({params})=>fetch(`http://localhost:5000/chef`)
             },
             {
                 path:"login",
