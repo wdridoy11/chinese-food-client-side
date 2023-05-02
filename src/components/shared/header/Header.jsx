@@ -23,7 +23,10 @@ const Header = () => {
                         <Link className='text-base font-medium text-black' to={`/`}>Home</Link>
                         <Link className='text-base font-medium text-black' to={`/`}>Blog</Link>
                         {user ?<>
-                            <img className='w-10 h-10 object-cover rounded-full' src={user?.photoURL} alt="" />
+                            <div className="tooltip tooltip-bottom" data-tip={`${user?.displayName}`}>
+                              <img className='w-10 h-10 object-cover rounded-full cursor-pointer' src={user?.photoURL} alt="user" />
+                            </div>
+                            <p></p>
                             <Link className='text-base font-medium text-black bg-[#F9A51A] px-5 py-1 rounded-md hover:bg-black hover:text-white duration-500' onClick={userLogOUt}>LogOut</Link>
                             </>:
                             <Link className='text-base font-medium text-black bg-[#F9A51A] px-5 py-1 rounded-md hover:bg-black hover:text-white duration-500' to={`/login`}>Login</Link>}
