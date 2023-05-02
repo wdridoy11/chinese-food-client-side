@@ -2,12 +2,14 @@ import React from 'react'
 import Hero from '../hero/Hero'
 import ChefDataLoad from '../../chef/ChefDataLoad'
 import Subscribe from '../subscribe/Subscribe'
+import About from './about/About'
 
 const Home = () => {
   return (
     <div>
       <Hero></Hero>
-      <h1 className='text-center text-4xl font-semibold pt-20'>Out Chef</h1>
+      <About></About>
+      <h1 className='text-center text-4xl font-semibold'>Out Chef</h1>
       <ChefDataLoad></ChefDataLoad>
       <Subscribe></Subscribe>
     </div>
