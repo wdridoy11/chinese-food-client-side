@@ -12,12 +12,13 @@ const Registration = () => {
     event.preventDefault();
     const form = event.target;
     const name =  form.name.value;
+    const photo =  form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
     createUserUsingEmail(email,password)
     .then((result)=>{
       const user = result.user;
-      updateUserProfile(user,name);
+      updateUserProfile(user,name,photo);
       console.log(user)
       form.reset();
     })
@@ -34,6 +35,7 @@ const Registration = () => {
                 <h3 className='text-2xl font-bold mb-10'>Registration Now</h3>
                 <form onSubmit={handleRegistration}>
                     <input className='w-full border-b border-[#ddd] mb-5 pb-2 text-base outline-none' type="text" name="name" id="name" placeholder='Enter your name' required/>
+                    <input className='w-full border-b border-[#ddd] mb-5 pb-2 text-base outline-none' type="text" name="photo" id="photo" placeholder='Photo URL' required/>
                     <input className='w-full border-b border-[#ddd] mb-5 pb-2 text-base outline-none' type="email" name="email" id="email" placeholder='Enter your email' required/>
                     <input className='w-full border-b border-[#ddd] mb-5 pb-2 text-base outline-none' type="password" name="password" id="password" placeholder='password' required/>
                     <p className='text-red-600'></p>

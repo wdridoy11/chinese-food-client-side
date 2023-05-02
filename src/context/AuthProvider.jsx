@@ -40,9 +40,10 @@ const AuthProvider = ({children}) => {
     }
 
     // user updateProfile
-    const updateUserProfile =(user,name)=>{
+    const updateUserProfile =(user,name,photo)=>{
         updateProfile(user,{
-            displayName:name
+            displayName:name,
+            photoURL:photo
         })
         .then((result)=>{
             console.log(result)

@@ -4,6 +4,7 @@ import Main from '../../layout/Main';
 import Home from '../../pages/home/home/Home';
 import Login from '../../pages/login/Login';
 import Registration from '../../pages/registration/Registration';
+import Error from '../../pages/error/Error';
 
 const router= createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router= createBrowserRouter([
             {
                 path:"registration",
                 element:<Registration></Registration>
+            },
+            {
+                path:"*",
+                element:<Error></Error>
             }
         ]
     }
