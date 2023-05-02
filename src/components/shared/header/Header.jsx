@@ -12,7 +12,6 @@ const Header = () => {
                 <div>
                     <nav className='flex flex-row  gap-5'>
                         <Link className='text-base font-medium text-black' to={`/`}>Home</Link>
-                        <Link className='text-base font-medium text-black' to={`/chef`}>Chef</Link>
                         <Link className='text-base font-medium text-black' to={`/`}>Blog</Link>
                         <Link className='text-base font-medium text-black' to={`/login`}>create accunt</Link>
                     </nav>

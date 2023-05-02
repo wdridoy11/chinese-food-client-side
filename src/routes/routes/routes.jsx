@@ -6,6 +6,7 @@ import Login from '../../pages/login/Login';
 import Registration from '../../pages/registration/Registration';
 import Error from '../../pages/error/Error';
 import ChefDataLoad from '../../pages/chef/ChefDataLoad';
+import ChefDetails from '../../pages/chef/ChefDetails';
 
 const router= createBrowserRouter([
     {
@@ -14,12 +15,18 @@ const router= createBrowserRouter([
         children:[
             {
                 path:"/",
-                element:<Home></Home>
+                element:<Home></Home>,
+                // loader:()=>fetch(`http://localhost:5000/chef`)
             },
             {
                 path:"chef",
                 element:<ChefDataLoad></ChefDataLoad>,
-                loader:({params})=>fetch(`http://localhost:5000/chef`)
+                // loader:()=>fetch(`http://localhost:5000/chef`)
+            },
+            {
+                path:"chef/:id",
+                element:<ChefDetails></ChefDetails>,
+                loader:({params})=>fetch(`http://localhost:5000/chef/${params.id}`)
             },
             {
                 path:"login",
