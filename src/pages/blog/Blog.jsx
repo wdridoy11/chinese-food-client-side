@@ -1,6 +1,11 @@
-import React from 'react'
+import React from 'react';
+// react pdf download
+import ReactDOM from "react-dom";
+import Pdf from "react-to-pdf";
+import { FaDownload } from 'react-icons/fa';
 const blogImg =`https://cdn.pixabay.com/photo/2015/05/31/11/25/girl-791177_960_720.jpg`;
 const Blog = () => {
+    const ref = React.createRef();
   return (
     <div>
         <div className="hero h-[400px]" style={{ backgroundImage: `url(${blogImg})` }}>
@@ -10,7 +15,12 @@ const Blog = () => {
             </div>
         </div>
         <div className='container mx-auto'>
-            <div className='pt-20'>
+            <div className='mt-20'>
+                <Pdf targetRef={ref} filename="blog.pdf">
+                        {({ toPdf }) => <button className='bg-black hover:bg- text-white py-2 px-5 rounded-full flex items-center gap-2 font-medium' onClick={toPdf}><FaDownload /> Download</button>}
+                </Pdf>
+            </div>
+            <div ref={ref}>
                 <div className='py-8'>
                     <h1 className='text-2xl font-semibold text-black mb-2'>Q: Tell us the differences between uncontrolled and controlled components.</h1>
                     <p className='text-base text-slate-500 font-medium'>React, controlled components refer to components that have their state and behavior controlled by the parent component. These components rely on props passed down from the parent component to update their state and behavior. Uncontrolled components refer to components that manage their own state internally</p>

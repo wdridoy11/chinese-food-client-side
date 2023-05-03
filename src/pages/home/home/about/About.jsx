@@ -5,8 +5,8 @@ const aboutImg=`https://wdridoy11.github.io/food-website/images/about-01.jpg`;
 const About = () => {
   return (
     <div className='py-20'>
-        <div className='container mx-auto'>
-            <div className="grid items-center grid-cols-1 md:grid-cols-2 gap-12">
+        <div className='container mx-auto px-2'>
+            <div className="grid items-center lg:grid-cols-2 gap-12">
                  <div>
                     <img className="w-full rounded-lg" src={aboutImg} alt="about img" />
                  </div>

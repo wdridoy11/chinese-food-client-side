@@ -15,10 +15,10 @@ const Header = () => {
 
   return (
     <div className='py-3'>
-        <div className='container mx-auto'>
+        <div className='container mx-auto px-2'>
             <div className='flex justify-between items-center'>
                 <div>
-                    <img className='w-full h-16' src={logo} alt="" />
+                    <Link to={'/'}><img className='w-full h-10 md:h-16' src={logo} alt="" /></Link>
                 </div>
                 <div>
                     <nav className='flex flex-row items-center gap-5'>

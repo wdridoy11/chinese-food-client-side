@@ -3,12 +3,12 @@ import React from 'react'
 const Subscribe = () => {
   return (
     <div className='bg-red-100 py-20'>
-        <div className='container mx-auto'>
-        <div className="flex flex-col items-center justify-between md:flex-row">
+        <div className='container mx-auto px-2'>
+        <div className="flex flex-col items-center justify-between md:flex-row gap-5">
                <div className="w-full lg:w-1/2">
                   <h1 className="text-black font-bold text-3xl mb-6">Subscribe Our Newsletter</h1>
                   <p className="my-6 text-base text-zinc-600 font-normal w-full lg:w-1/2">
-                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed tenetur fuga non nam esse veniam.
+                      Once you have subscribed, you can expect to receive regular updates from the sender according to their schedule,
                   </p>
                </div>
                <div className="w-full lg:w-1/2">
