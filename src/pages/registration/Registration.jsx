@@ -5,13 +5,16 @@ import { AuthContext } from '../../context/AuthProvider';
 const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
 
 const Registration = () => {
-
+  // It's import from AuthProvider
   const {createUserUsingGoogle, createUserUsingEmail, updateUserProfile,createUserUsingGithub}=useContext(AuthContext);
   const [error,setError] = useState("");
+  
+  // redirect page
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.form?.pathname || "/";
 
+  //  user Registration information
   const handleRegistration =(event)=>{
     event.preventDefault();
     const form = event.target;
@@ -20,9 +23,12 @@ const Registration = () => {
     const email = form.email.value;
     const password = form.password.value;
     setError("");
+
     if(password.length<6){
       setError("Password must be 6 character")
     }
+    
+    // import from AuthProvider and when user create account using email and password
     createUserUsingEmail(email,password)
     .then((result)=>{
       const user = result.user;
@@ -32,7 +38,7 @@ const Registration = () => {
       form.reset();
     })
     .catch((error)=>{
-      console.log(error.message)
+      setError(error.message)
     })
   }
 

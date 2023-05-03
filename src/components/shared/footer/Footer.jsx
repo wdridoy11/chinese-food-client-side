@@ -1,7 +1,8 @@
 import React from 'react'
 import logo from '../../../assets/logo.png'
 import { Link } from 'react-router-dom'
-import { FaFacebook, FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import {FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+
 const Footer = () => {
   return (
     <div className='bg-black py-20'>
@@ -12,7 +13,7 @@ const Footer = () => {
                     <p className='text-base text-white font-normal mt-5'>
                         Cras at ultrices erat, sed vulputate eros. Nunc at augue gravida est fermentum
                         vulputate. Pellentesque et ipsum in dui malesuada tempus.
-                     </p>
+                    </p>
                 </div>
                 <div>
                     <h3 className='text-2xl font-medium text-white mt-7'>Navigation</h3>
@@ -22,7 +23,7 @@ const Footer = () => {
                   </div>
                 </div>
                 <div>
-                    <h3 className='text-2xl font-medium text-white mt-7'>Useful Links</h3>
+                  <h3 className='text-2xl font-medium text-white mt-7'>Useful Links</h3>
                   <div className='flex flex-col text-white mt-7'>
                         <Link className='text-base font-normal' to={'/registration'}>Registration</Link>
                         <Link className='text-base font-normal' to={'/login'}>Login</Link>

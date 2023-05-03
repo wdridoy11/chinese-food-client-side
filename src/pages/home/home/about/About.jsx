@@ -20,7 +20,6 @@ const About = () => {
                         Overall, a good food description should be clear, concise, and appetizing, conveying the essence
                         of the dish in a way that is both informative and engaging to the reader or listener.
                     </p>
-
                     <Link className='bg-[#F9A51A] px-5 py-2 rounded-md text-base font-semibold text-black hover:bg-black hover:text-white duration-500'>Read More</Link>
                  </div>
             </div>

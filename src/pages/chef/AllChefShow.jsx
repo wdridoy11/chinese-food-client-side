@@ -4,8 +4,10 @@ import { AuthContext } from '../../context/AuthProvider';
 
 const AllChefShow = ({singleChef}) => {
 
+  // This data load from ChefDataLoad and destructure 
   const {id,img,name,experience,recipes,like} = singleChef;
-  const {user}=useContext(AuthContext);
+  const {user} = useContext(AuthContext);
+
   return (
     <div>
       <div>

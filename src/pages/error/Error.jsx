@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 const errorPageImg=`https://img.freepik.com/free-vector/page-found-concept-illustration_114360-1869.jpg?w=826&t=st=1682958743~exp=1682959343~hmac=76297dd87cfce1c662c622f238e5f6ed89b1f1ba39340b80297f3e0b92896169`
+
 const Error = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  
   return (
     <div>
         <div className='container mx-auto'>

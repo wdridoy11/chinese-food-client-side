@@ -4,6 +4,7 @@ import AllChefShow from './AllChefShow';
 const ChefDataLoad = () => {
 
     const [chefData,setChefData]=useState([]);
+    // chef data is loading
     useEffect(()=>{
       fetch("http://localhost:5000/chef")
       .then((res)=>res.json())

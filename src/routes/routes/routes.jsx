@@ -1,14 +1,15 @@
 import React from 'react'
 import {createBrowserRouter} from "react-router-dom";
+// import page
 import Main from '../../layout/Main';
-import Home from '../../pages/home/home/Home';
-import Login from '../../pages/login/Login';
-import Registration from '../../pages/registration/Registration';
-import Error from '../../pages/error/Error';
-import ChefDataLoad from '../../pages/chef/ChefDataLoad';
-import ChefDetails from '../../pages/chef/ChefDetails';
-import PrivetRoute from '../privetRoute/PrivetRoute';
 import Blog from '../../pages/blog/Blog';
+import Error from '../../pages/error/Error';
+import Login from '../../pages/login/Login';
+import Home from '../../pages/home/home/Home';
+import PrivetRoute from '../privetRoute/PrivetRoute';
+import ChefDetails from '../../pages/chef/ChefDetails';
+import ChefDataLoad from '../../pages/chef/ChefDataLoad';
+import Registration from '../../pages/registration/Registration';
 
 const router= createBrowserRouter([
     {

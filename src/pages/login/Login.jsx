@@ -5,13 +5,16 @@ import { AuthContext } from '../../context/AuthProvider';
 const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
 
 const Login = () => {
-
-    const {createUserUsingGoogle,signInUser,createUserUsingGithub}=useContext(AuthContext);
+    
+    // It's import from AuthProvider
+    const {createUserUsingGoogle,signInUser,createUserUsingGithub} = useContext(AuthContext);
     const [error,setError]=useState("");
+    // when user login then redirect specific page
     const navigate = useNavigate();
     const location = useLocation();
     const from=location.state?.form?.pathname || "/";
 
+    // user login info
     const handleLogin =(event)=>{
         event.preventDefault();
         const form = event.target;

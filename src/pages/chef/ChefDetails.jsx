@@ -1,23 +1,30 @@
 import React, { useState } from 'react'
+import {useLoaderData } from 'react-router-dom';
+// react toastify
 import '@smastrom/react-rating/style.css';
 import 'react-toastify/dist/ReactToastify.css';
-import { FaHeart } from 'react-icons/fa';
-import {useLoaderData } from 'react-router-dom';
-import { Rating } from '@smastrom/react-rating';
 import { ToastContainer, toast } from 'react-toastify';
+// react icon import
+import { FaHeart } from 'react-icons/fa';
+import { Rating } from '@smastrom/react-rating';
+
 const bannerImg=`https://img.freepik.com/free-photo/front-view-burger-with-french-fries_23-2148234991.jpg?w=1380&t=st=1683035016~exp=1683035616~hmac=b12d6be7dcf98fc94494bacbf1888c910c991503abf46f775f161a0f6a22b7d6`;
 
 const ChefDetails = () => {
-
+    // This data load from routes and destructure 
   const singleChefDetails = useLoaderData();
   const {img,name,experience,recipes,description,like,recipesDetails,rating} = singleChefDetails;
+
+  // react rating
   const [userRating, setUserRating] = useState(rating);
 
+  // Favorite toast
   const [isFavorite, setIsFavorite] = useState(false);
   const handleFavoriteClick=()=> {
     setIsFavorite(true);
   }
-  
+
+  // Favorite toast message
   const notify = () => toast("Wow Favorite added!");
 
   return (
@@ -43,6 +50,7 @@ const ChefDetails = () => {
                 <p className='mb-2 text-base font-medium mt-1'>Experience: {experience} years experience</p>
               </div>
           </div>
+          {/* Recipes Details map and display */}
           <div>
               <h1 className="text-4xl text-center font-semibold mb-7">Recipes</h1>
               <div className='grid grid-cols-3 gap-5 pb-20'>
