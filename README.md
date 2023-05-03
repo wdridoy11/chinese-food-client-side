@@ -1,8 +1,8 @@
--1. Hello, I have created food-recipe. I'm using React JS, Express.js, tailwind CSS, daisyui.
--2. It's dynamic website. User can register and can login. User create account email, google, GitHub.
--3. If the user is not logged in, he/she will not be able to see the recipe items, they are protected with a private routes.
--4. By clicking on View Recipe, he/she will see the recipe details and from there he can add favorites.
--5. He/she can download the blog in PDF form from the blog page.
+-1. Hello, I have created food-recipe. I'm using React JS, Express.js, tailwind CSS, daisyui. <br/>
+-2. It's dynamic website. User can register and can login. User create account email, google, GitHub.<br/>
+-3. If the user is not logged in, he/she will not be able to see the recipe items, they are protected with a private routes.<br/>
+-4. By clicking on View Recipe, he/she will see the recipe details and from there he can add favorites.<br/>
+-5. He/she can download the blog in PDF form from the blog page.<br/>
 
 
 # Getting Started with Create React App
