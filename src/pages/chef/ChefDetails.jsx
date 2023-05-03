@@ -1,14 +1,22 @@
 import React, { useState } from 'react'
+import '@smastrom/react-rating/style.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { FaHeart } from 'react-icons/fa';
-import '@smastrom/react-rating/style.css'
-import {useLoaderData } from 'react-router-dom'
+import {useLoaderData } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating';
+import { ToastContainer, toast } from 'react-toastify';
 const bannerImg=`https://img.freepik.com/free-photo/front-view-burger-with-french-fries_23-2148234991.jpg?w=1380&t=st=1683035016~exp=1683035616~hmac=b12d6be7dcf98fc94494bacbf1888c910c991503abf46f775f161a0f6a22b7d6`;
 
 const ChefDetails = () => {
+
   const singleChefDetails = useLoaderData();
   const {img,name,experience,recipes,description,like,recipesDetails,rating} = singleChefDetails;
   const [userRating, setUserRating] = useState(rating);
+  const notify = () => toast("Wow Favorite added!");
+  const [isFavorite, setIsFavorite] = useState(false);
+  const handleFavoriteClick=()=> {
+    setIsFavorite(true);
+  }
 
   return (
     <div>
@@ -50,12 +58,19 @@ const ChefDetails = () => {
                         </div>
                         <div className='flex justify-between items-center mt-3'>
                             <p className='text-base font-medium list-decimal flex gap-1'><Rating style={{ maxWidth: 100 }} value={userRating} onChange={setUserRating} readOnly/>({details.rating}) </p>
-                            <p className='text-red-500 border border-[#F9A51A] p-2 rounded-md cursor-pointer hover:bg-black duration-500'><FaHeart></FaHeart></p>
+                            <button onClick={handleFavoriteClick} disabled={isFavorite}>
+                                {isFavorite ? <>
+                                    <p className='text-red-500 border border-[#F9A51A] p-2 rounded-md bg-[#F9A51A] disabled'><FaHeart></FaHeart></p>
+                                </>:<>
+                                <p onClick={notify} className='text-red-500 border border-[#F9A51A] p-2 rounded-md cursor-pointer hover:bg-black duration-500'><FaHeart></FaHeart></p>
+                                </>}
+                            </button>
                         </div>
                       </div>
                   </div>)}
               </div>
           </div>
+          <ToastContainer />
       </div>
     </div>
   )

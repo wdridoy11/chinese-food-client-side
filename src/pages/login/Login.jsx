@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext,useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../context/AuthProvider';
@@ -7,6 +7,7 @@ const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
 const Login = () => {
 
     const {createUserUsingGoogle,signInUser,createUserUsingGithub}=useContext(AuthContext);
+    const [error,setError]=useState("");
 
     const handleLogin =(event)=>{
         event.preventDefault();
@@ -19,19 +20,22 @@ const Login = () => {
             console.log(user)
         })
         .catch((error)=>{
-            console.log(error.message)
+            console.log(error)
+            setError(error.message)
         })
     }
 
+
   return (
-    <div className='w-full items-center pt-32'>
+    <div className='w-full items-center pt-32 pb-20'>
         <div className='container mx-auto'>
             <div>
+                <p className='text-red-600 text-center font-normal text-lg mb-5'>{error}</p>
                 <div className='border border-[#ddd] p-12 md:w-1/2 mx-auto rounded-lg'>
                     <h3 className='text-2xl font-bold mb-5'>Login</h3>
                     <form onSubmit={handleLogin}>
-                        <input className='w-full border-b border-[#ddd] mb-5 pb-2 text-base' type="email" name="email" id="email" placeholder='Enter your email' required/>
-                        <input className='w-full border-b border-[#ddd] mb-5 pb-2 text-base' type="password" name="password" id="password" placeholder='Enter your password' required/>
+                        <input className='w-full border-b outline-none border-[#ddd] mb-5 pb-2 text-base' type="email" name="email" id="email" placeholder='Enter your email' required/>
+                        <input className='w-full border-b outline-none border-[#ddd] mb-5 pb-2 text-base' type="password" name="password" id="password" placeholder='Enter your password' required/>
                         <div className='flex justify-between'>
                             <div className='flex items-center gap-2'>
                                 <input className='checkbox' type="checkbox" name="checkbox" id="checkbox"  value="Remember Me"/>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthProvider';
@@ -7,7 +7,7 @@ const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
 const Registration = () => {
 
   const {createUserUsingGoogle, createUserUsingEmail, updateUserProfile,createUserUsingGithub}=useContext(AuthContext);
-  
+  const [error,setError] = useState("")
   const handleRegistration =(event)=>{
     event.preventDefault();
     const form = event.target;
@@ -15,6 +15,10 @@ const Registration = () => {
     const photo =  form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
+    setError("");
+    if(password.length<6){
+      setError("Password must be 6 character")
+    }
     createUserUsingEmail(email,password)
     .then((result)=>{
       const user = result.user;
@@ -28,9 +32,10 @@ const Registration = () => {
   }
 
   return (
-    <div className='w-full items-center pt-12'>
+    <div className='w-full items-center pt-12 pb-20'>
     <div className='container mx-auto'>
         <div>
+        <p className='text-red-600 text-center font-normal text-lg mb-5'>{error}</p>
             <div className='border border-[#ddd] p-12 md:w-1/2 mx-auto rounded-lg'>
                 <h3 className='text-2xl font-bold mb-10'>Registration Now</h3>
                 <form onSubmit={handleRegistration}>
