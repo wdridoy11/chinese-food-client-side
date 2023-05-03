@@ -12,11 +12,13 @@ const ChefDetails = () => {
   const singleChefDetails = useLoaderData();
   const {img,name,experience,recipes,description,like,recipesDetails,rating} = singleChefDetails;
   const [userRating, setUserRating] = useState(rating);
-  const notify = () => toast("Wow Favorite added!");
+
   const [isFavorite, setIsFavorite] = useState(false);
   const handleFavoriteClick=()=> {
     setIsFavorite(true);
   }
+  
+  const notify = () => toast("Wow Favorite added!");
 
   return (
     <div>

@@ -8,6 +8,7 @@ import Error from '../../pages/error/Error';
 import ChefDataLoad from '../../pages/chef/ChefDataLoad';
 import ChefDetails from '../../pages/chef/ChefDetails';
 import PrivetRoute from '../privetRoute/PrivetRoute';
+import Blog from '../../pages/blog/Blog';
 
 const router= createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const router= createBrowserRouter([
             {
                 path:"/",
                 element:<Home></Home>,
+            },
+            {
+                path:"/blog",
+                element:<Blog></Blog>
             },
             {
                 path:"chef",

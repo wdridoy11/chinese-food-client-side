@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../../assets/logo.png'
 import { AuthContext } from '../../../context/AuthProvider'
+import ActiveLink from '../activeLink/ActiveLink'
 const Header = () => {
     const {user,logOut}=useContext(AuthContext);
     const userLogOUt=()=>{
@@ -20,8 +21,8 @@ const Header = () => {
                 </div>
                 <div>
                     <nav className='flex flex-row items-center gap-5'>
-                        <Link className='text-base font-medium text-black' to={`/`}>Home</Link>
-                        <Link className='text-base font-medium text-black' to={`/`}>Blog</Link>
+                        <ActiveLink className='text-base font-semibold text-black' to={`/`}>Home</ActiveLink>
+                        <ActiveLink className='text-base font-semibold text-black' to={`/blog`}>Blog</ActiveLink>
                         {user ?<>
                             <div className="tooltip tooltip-bottom" data-tip={`${user?.displayName}`}>
                               <img className='w-10 h-10 object-cover rounded-full cursor-pointer' src={user?.photoURL} alt="user" />
