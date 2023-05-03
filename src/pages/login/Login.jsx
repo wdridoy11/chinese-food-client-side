@@ -1,5 +1,5 @@
 import React, { useContext,useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../context/AuthProvider';
 const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
@@ -8,6 +8,9 @@ const Login = () => {
 
     const {createUserUsingGoogle,signInUser,createUserUsingGithub}=useContext(AuthContext);
     const [error,setError]=useState("");
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from=location.state?.form?.pathname || "/";
 
     const handleLogin =(event)=>{
         event.preventDefault();
@@ -18,6 +21,7 @@ const Login = () => {
         .then((result)=>{
             const user = result.user;
             console.log(user)
+            navigate(from,{replace:true})
         })
         .catch((error)=>{
             console.log(error)

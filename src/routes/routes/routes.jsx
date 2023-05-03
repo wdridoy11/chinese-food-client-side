@@ -7,6 +7,7 @@ import Registration from '../../pages/registration/Registration';
 import Error from '../../pages/error/Error';
 import ChefDataLoad from '../../pages/chef/ChefDataLoad';
 import ChefDetails from '../../pages/chef/ChefDetails';
+import PrivetRoute from '../privetRoute/PrivetRoute';
 
 const router= createBrowserRouter([
     {
@@ -16,16 +17,14 @@ const router= createBrowserRouter([
             {
                 path:"/",
                 element:<Home></Home>,
-                // loader:()=>fetch(`http://localhost:5000/chef`)
             },
             {
                 path:"chef",
                 element:<ChefDataLoad></ChefDataLoad>,
-                // loader:()=>fetch(`http://localhost:5000/chef`)
             },
             {
                 path:"chef/:id",
-                element:<ChefDetails></ChefDetails>,
+                element:<PrivetRoute><ChefDetails></ChefDetails></PrivetRoute>,
                 loader:({params})=>fetch(`http://localhost:5000/chef/${params.id}`)
             },
             {
