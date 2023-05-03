@@ -14,7 +14,7 @@ const AllChefShow = ({singleChef}) => {
     <div>
       <div>
          <div className="card bg-base-100 shadow-xl">
-            <LazyLoadImage className='w-full h-[300px] object-cover object-top' alt={"Hello"} effect="blur" src={img} delayTime={700} />
+            <LazyLoadImage className='w-full h-[300px] object-cover object-top' alt="chef" effect="blur" src={img} delayTime={700} />
             <div className='p-3 pb-5'>
               <h2 className="card-title">Name: {name}</h2>
               <p className='text-base font-medium mt-1'>Experience: {experience} years experience</p>
