@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../../../assets/logo.png'
 import { AuthContext } from '../../../context/AuthProvider'
 import ActiveLink from '../activeLink/ActiveLink'
 const Header = () => {
@@ -18,7 +17,7 @@ const Header = () => {
         <div className='container mx-auto px-2'>
             <div className='flex justify-between items-center'>
                 <div>
-                    <Link to={'/'}><img className='w-full h-10 md:h-16' src={logo} alt="" /></Link>
+                    <Link to={'/'}><h3 className='text-xl'>Chinese food</h3></Link>
                 </div>
                 <div>
                     <nav className='flex flex-row items-center gap-5'>

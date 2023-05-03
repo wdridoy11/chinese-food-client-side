@@ -9,7 +9,7 @@ const Home = () => {
     <div>
       <Hero></Hero>
       <About></About>
-      <h1 className='text-center text-4xl font-semibold'>Out Chef</h1>
+      <h1 className='text-center text-4xl font-semibold'>Our Chef</h1>
       <ChefDataLoad></ChefDataLoad>
       <Subscribe></Subscribe>
     </div>
