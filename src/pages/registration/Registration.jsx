@@ -1,13 +1,17 @@
 import React, { useContext, useState } from 'react'
 import { FaGithub } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthProvider';
 const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
 
 const Registration = () => {
 
   const {createUserUsingGoogle, createUserUsingEmail, updateUserProfile,createUserUsingGithub}=useContext(AuthContext);
-  const [error,setError] = useState("")
+  const [error,setError] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.form?.pathname || "/";
+
   const handleRegistration =(event)=>{
     event.preventDefault();
     const form = event.target;
@@ -23,6 +27,7 @@ const Registration = () => {
     .then((result)=>{
       const user = result.user;
       updateUserProfile(user,name,photo);
+      navigate(from,{replace:true})
       console.log(user)
       form.reset();
     })
