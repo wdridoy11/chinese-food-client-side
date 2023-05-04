@@ -1,9 +1,10 @@
 import React from 'react';
-// react pdf download
 import ReactDOM from "react-dom";
+// react pdf download
 import Pdf from "react-to-pdf";
 import { FaDownload } from 'react-icons/fa';
 const blogImg =`https://cdn.pixabay.com/photo/2015/05/31/11/25/girl-791177_960_720.jpg`;
+
 const Blog = () => {
     const ref = React.createRef();
   return (
@@ -14,7 +15,7 @@ const Blog = () => {
                 <h1 className="mb-5 text-5xl font-semibold">Blog</h1>
             </div>
         </div>
-        <div className='container mx-auto'>
+        <div className='container mx-auto px-2'>
             <div className='mt-20'>
                 <Pdf targetRef={ref} filename="blog.pdf">
                         {({ toPdf }) => <button className='bg-black hover:bg- text-white py-2 px-5 rounded-full flex items-center gap-2 font-medium' onClick={toPdf}><FaDownload /> Download</button>}
