@@ -29,7 +29,6 @@ const Header = () => {
                 <button className="absolute top-3 right-3 cursor-pointer" onClick={handleToggle}><img className="w-8 block md:hidden" src={bar} alt="Icon" /></button>
                 <div>
                     <nav className={isActive ? "hidden md:flex gap-7 items-center":"flex flex-col md:flex-row gap-7 mt-16"}>
-                    {/* <nav className='flex flex-row items-center gap-5'> */}
                         <ActiveLink className='text-base font-semibold text-black' to={`/`}>Home</ActiveLink>
                         <ActiveLink className='text-base font-semibold text-black' to={`/blog`}>Blog</ActiveLink>
                         {user ?<>

@@ -2,7 +2,7 @@ import React from 'react'
 import Hero from '../hero/Hero'
 import ChefDataLoad from '../../chef/ChefDataLoad'
 import Subscribe from '../subscribe/Subscribe'
-import About from './about/About'
+import About from '../about/About'
 
 const Home = () => {
   return (

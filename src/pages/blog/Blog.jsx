@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from "react-dom";
 // react pdf download
 import Pdf from "react-to-pdf";
 import { FaDownload } from 'react-icons/fa';

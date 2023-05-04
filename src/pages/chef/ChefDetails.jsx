@@ -28,7 +28,7 @@ const ChefDetails = () => {
   }
 
   // Favorite toast message
-  const notify = () => toast("Wow Favorite added!");
+  const notify = (id) =>toast("Wow Favorite added!");
 
   return (
     <div>
@@ -73,7 +73,7 @@ const ChefDetails = () => {
                                 {isFavorite ? <>
                                     <p className='text-red-500 border border-[#F9A51A] p-2 rounded-md bg-[#F9A51A] disabled'><FaHeart></FaHeart></p>
                                 </>:<>
-                                <p onClick={notify} className='text-red-500 border border-[#F9A51A] p-2 rounded-md cursor-pointer hover:bg-black duration-500'><FaHeart></FaHeart></p>
+                                <p onClick={()=>notify(details.id)} className='text-red-500 border border-[#F9A51A] p-2 rounded-md cursor-pointer hover:bg-black duration-500'><FaHeart></FaHeart></p>
                                 </>}
                             </button>
                         </div>
