@@ -3,6 +3,7 @@
 -3. If the user is not logged in, he/she will not be able to see the recipe items, they are protected with a private routes.<br/>
 -4. By clicking on View Recipe, he/she will see the recipe details and from there he can add favorites.<br/>
 -5. He/she can download the blog in PDF form from the blog page.<br/>
+Website live link : https://chinese-food-recipe.netlify.app/
 
 
 # Getting Started with Create React App
