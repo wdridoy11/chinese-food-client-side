@@ -10,6 +10,8 @@ import PrivetRoute from '../privetRoute/PrivetRoute';
 import ChefDetails from '../../pages/chef/ChefDetails';
 import ChefDataLoad from '../../pages/chef/ChefDataLoad';
 import Registration from '../../pages/registration/Registration';
+import Blogs from '../../pages/blog/Blogs';
+import BlogDetails from '../../pages/blog/BlogDetails';
 
 const router= createBrowserRouter([
     {
@@ -22,7 +24,12 @@ const router= createBrowserRouter([
             },
             {
                 path:"/blog",
-                element:<Blog></Blog>
+                element:<Blogs></Blogs>
+            },
+            {
+                path:"/blog/:id",
+                element:<BlogDetails></BlogDetails>,
+                loader:({params})=>fetch(`http://localhost:5000/blog/${params.id}`)
             },
             {
                 path:"chef",

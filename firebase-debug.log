@@ -1,0 +1,38 @@
+[debug] [2023-07-08T15:31:12.772Z] ----------------------------------------------------------------------
+[debug] [2023-07-08T15:31:12.774Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\CB\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-07-08T15:31:12.774Z] CLI Version:   11.29.1
+[debug] [2023-07-08T15:31:12.774Z] Platform:      win32
+[debug] [2023-07-08T15:31:12.774Z] Node Version:  v18.15.0
+[debug] [2023-07-08T15:31:12.775Z] Time:          Sat Jul 08 2023 21:31:12 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-07-08T15:31:12.776Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-07-08T15:31:12.780Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-07-08T15:31:12.911Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-07-08T15:31:12.912Z] > authorizing via signed-in user (ridoysharifbrmsrs@gmail.com)
+[debug] [2023-07-08T15:31:12.912Z] [iam] checking project food-recipe-707c1 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-07-08T15:31:12.913Z] > refreshing access token with scopes: []
+[debug] [2023-07-08T15:31:12.914Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-07-08T15:31:12.914Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-07-08T15:31:15.187Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-07-08T15:31:15.188Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-07-08T15:31:16.208Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-07-08T15:31:16.208Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-07-08T15:31:16.217Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/food-recipe-707c1:testIamPermissions [none]
+[debug] [2023-07-08T15:31:16.217Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/food-recipe-707c1:testIamPermissions x-goog-quota-user=projects/food-recipe-707c1
+[debug] [2023-07-08T15:31:16.217Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/food-recipe-707c1:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-07-08T15:31:18.219Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/food-recipe-707c1:testIamPermissions 200
+[debug] [2023-07-08T15:31:18.219Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/food-recipe-707c1:testIamPermissions {}
+[debug] [2023-07-08T15:31:18.220Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project food-recipe-707c1:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2023-07-08T15:31:18.225Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/food-recipe-707c1 [none]
+[debug] [2023-07-08T15:31:19.177Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/food-recipe-707c1 403
+[debug] [2023-07-08T15:31:19.177Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/food-recipe-707c1 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2023-07-08T15:31:19.178Z] HTTP Error: 403, The caller does not have permission
+[debug] [2023-07-08T15:31:19.557Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\CB\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\CB\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project food-recipe-707c1. Please make sure the project exists and your account has permission to access it.

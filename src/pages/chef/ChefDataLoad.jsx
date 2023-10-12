@@ -6,12 +6,12 @@ const ChefDataLoad = () => {
     const [chefData,setChefData]=useState([]);
     // chef data is loading
     useEffect(()=>{
-      fetch("https://food-recipe-server-developersridoy-gmailcom.vercel.app/chef")
+      fetch("http://localhost:5000/chef")
       .then((res)=>res.json())
       .then((data)=>setChefData(data))
       .catch((error)=>console.log(error))
     },[])
-
+    
   return (
     <div className='pt-8 pb-20'>
         <div className='container mx-auto px-2'>
