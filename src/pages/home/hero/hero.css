@@ -1,0 +1,7 @@
+.hero{
+    background: linear-gradient(#00000073,#00000073),url(../../../assets/hero-02.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 300px 0;
+}
