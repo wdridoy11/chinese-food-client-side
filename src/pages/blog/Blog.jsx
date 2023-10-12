@@ -9,9 +9,9 @@ const Blog = ({blog}) => {
         <div className="shadow-xl rounded-b-lg pb-2 mt-4">
             <img className='h-[250px] w-full object-cover rounded-t-md' src={image} alt="" />
             <div className="p-5">
-               <h3 className="text-2xl text-black font-semibold">{title}</h3>
+               <h3 className="text-xl text-black font-semibold">{title.length>40 ? `${title.slice(0,40)} ...`:title}</h3>
                <p className="text-base text-slate-400 font-normal my-2">{description_1.length > 150 ? `${description_1.slice(0,150)}...`:description_1}</p>
-               <Link to={`/blog/${_id}`} className='bg-[#F9A51A] inline-block mt-2 px-5 py-2 rounded-md text-base font-semibold text-black hover:bg-black hover:text-white duration-500d'>Read More</Link>
+               <Link to={`/blog/${_id}`} className='bg-[#F9A51A] inline-block mt-2 px-7 py-2 rounded-md text-base font-semibold text-white hover:bg-black duration-500'>Read More</Link>
             </div>
         </div>
     </div>

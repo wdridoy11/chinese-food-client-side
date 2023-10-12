@@ -30,7 +30,7 @@ const items =[
 
 const Item = () => {
   return (
-    <div className='py-20'>
+    <div className='pb-20'>
         <div className='container mx-auto'>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
                 {items.map((item)=><div key={item.id} className='grid grid-cols-2 items-center ga-2 shadow-lg p-7 rounded-md'>

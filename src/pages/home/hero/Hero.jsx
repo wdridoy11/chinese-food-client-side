@@ -1,6 +1,4 @@
 import React from 'react'
-import Banner from '../../../assets/banner-01.png';
-import barger from '../../../assets/burger.png';
 import { Link } from 'react-router-dom';
 import "./hero.css"
 

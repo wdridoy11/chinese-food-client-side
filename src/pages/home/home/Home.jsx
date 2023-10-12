@@ -5,6 +5,7 @@ import Subscribe from '../subscribe/Subscribe'
 import About from '../about/About'
 import Blogs from '../../blog/Blogs'
 import Item from '../items/Item'
+import Testimonial from '../../testimonial/Testimonial'
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Item></Item>
       <h1 className='text-center text-4xl font-semibold'>Our Chef</h1>
       <ChefDataLoad></ChefDataLoad>
+      <Testimonial></Testimonial>
       <Blogs></Blogs>
       <Subscribe></Subscribe>
     </div>
