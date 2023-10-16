@@ -45,7 +45,7 @@ const Testimonial = () => {
   return (
     <div className='py-10'>
         <div className='container mx-auto'>
-            <h1 class="text-center text-4xl font-semibold">Testimonial</h1>
+            <h1 className="text-center text-4xl font-semibold">Testimonial</h1>
             <div className='w-3/5 p-10 mx-auto'>
                 <Swiper
                     cssMode={true}

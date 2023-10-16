@@ -30,10 +30,10 @@ const items =[
 
 const Item = () => {
   return (
-    <div className='pb-20'>
+    <div className='py-20 bg-[#f7f2e2]'>
         <div className='container mx-auto'>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
-                {items.map((item)=><div key={item.id} className='grid grid-cols-2 items-center ga-2 shadow-lg p-7 rounded-md'>
+                {items.map((item)=><div key={item.id} className='grid bg-white grid-cols-2 items-center gap-2 shadow-lg p-10 rounded-md'>
                     <div>
                         <h3 className='text-2xl font-medium mb-2'>{item.title}</h3>
                         <p className='text-lg text-black font-normal'>{item.description}</p>
