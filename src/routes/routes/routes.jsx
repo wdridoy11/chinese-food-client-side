@@ -22,13 +22,13 @@ const router= createBrowserRouter([
                 element:<Home></Home>,
             },
             {
-                path:"/blog",
+                path:"/blogs",
                 element:<Blogs></Blogs>
             },
             {
-                path:"/blog/:id",
+                path:"blog/:id",
                 element:<BlogDetails></BlogDetails>,
-                loader:({params})=>fetch(`https://food-recipe-server-r8evnahi5-developersridoy-gmailcom.vercel.app/blog/${params.id}`)
+                loader:({params})=>fetch(`https://food-recipe-server-7nv0uwwiv-developersridoy-gmailcom.vercel.app/blog/${params.id}`)
             },
             {
                 path:"chef",
@@ -37,7 +37,7 @@ const router= createBrowserRouter([
             {
                 path:"chef/:id",
                 element:<PrivetRoute><ChefDetails></ChefDetails></PrivetRoute>,
-                loader:({params})=>fetch(`https://food-recipe-server-r8evnahi5-developersridoy-gmailcom.vercel.app/chef/${params.id}`)
+                loader:({params})=>fetch(`https://food-recipe-server-7nv0uwwiv-developersridoy-gmailcom.vercel.app/chef/${params.id}`)
             },
             {
                 path:"login",
