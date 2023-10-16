@@ -6,7 +6,7 @@ const ChefDataLoad = () => {
     const [chefData,setChefData]=useState([]);
     // chef data is loading
     useEffect(()=>{
-      fetch("http://localhost:5000/chef")
+      fetch("https://food-recipe-server-r8evnahi5-developersridoy-gmailcom.vercel.app/chef")
       .then((res)=>res.json())
       .then((data)=>setChefData(data))
       .catch((error)=>console.log(error))

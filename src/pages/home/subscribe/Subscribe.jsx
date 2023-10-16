@@ -7,8 +7,7 @@ const Subscribe = () => {
   const form = useRef();
   const onSubmit = e => {
     e.preventDefault();
-    // console.log(e.target.email.value)
-    emailjs.sendForm("service_euj0jua", "template_a3q1cir", form.current, "OOagAnN5-T-B_vTnl")
+    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_EMPLATE_ID, form.current, process.env.REACT_PUBLIC_KEY)
     .then((result) => {
         if(result.text === "OK"){
           setEmailSuccess("Congratulations email sent successfully")
