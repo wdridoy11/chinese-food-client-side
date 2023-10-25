@@ -14,7 +14,6 @@ const Home = () => {
       <Hero></Hero>
       <About></About>
       <Item></Item>
-      
       <ChefDataLoad></ChefDataLoad>
       <Testimonial></Testimonial>
       <Blogs></Blogs>

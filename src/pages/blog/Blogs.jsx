@@ -4,7 +4,7 @@ import Blog from './Blog'
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   useEffect(()=>{
-    fetch("https://food-recipe-server-7nv0uwwiv-developersridoy-gmailcom.vercel.app/blogs")
+    fetch(`https://food-recipe-server-ej99akxor-developersridoy-gmailcom.vercel.app/blogs`)
     .then((res)=>res.json())
     .then((data)=>setBlogs(data))
     .catch((err)=>console.log(err.message))
